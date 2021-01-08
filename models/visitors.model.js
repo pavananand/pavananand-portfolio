@@ -1,52 +1,22 @@
 const mongoose = require('mongoose');
 
-const EmployeeHistory = mongoose.Schema({
-    loginId: {
+const VisitorsHistory = mongoose.Schema({
+    name: {
         type: String,
         required: true
     },
-    empId: {
+    email: {
         type: String,
         required: true
     },
-    empName: {
+    message: {
         type: String,
         required: true
     },
-    actions: {
-        type: Array,
-        required: true
-    },
-    weekStartDate: {
-        type: String,
-        required: true
-    },
-    lastSignIn: {
-        type: String,
-        required: false
-    },
-    reportsTo: {
-        type: String,
-        required: false
-    },
-    lastSingOut: {
-        type: String,
-        default: null
-    },
-    lastBreak: {
-        breakType: {
-            type: String,
-            default: null
-        },
-        outTimeStamp: {
-            type: String,
-            default: null
-        } ,
-        inTimeStamp: {
-            type: String,
-            default: null
-        } 
+    createdAt: {
+        type: Date,
+        default: new Date()
     }
 })
 
-const EmployeeData= module.exports = mongoose.model('EmployeeHistory', EmployeeHistory);
+const VisitorsData= module.exports = mongoose.model('VisitorsHistory', VisitorsHistory);
