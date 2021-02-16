@@ -1,6 +1,7 @@
 var express = require('express');
 const demosControllers = require('../controllers/demos.controllers');
 const visitorsController = require('../controllers/visitors.controllers');
+const chatbotControllers = require('../controllers/chatbot.controllers');
 var router = express.Router();
 
 /* GET home page. */
@@ -15,5 +16,8 @@ router.post('/insert',visitorsController.insertData);
 /* Demos List API's */
 router.get('/getDemos',demosControllers.getData);
 router.post('/insertDemos',demosControllers.insertData);
+
+/* Chat Bot API's*/ 
+router.post('/bot',chatbotControllers.getBotResponse);
 
 module.exports = router;
